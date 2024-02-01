@@ -35,14 +35,14 @@ class Request(bt.Synapse):
     hf_link: str = ""
     key: str = ""
 
-    def deserialize(self) -> list:
+    def deserialize(self) -> str:
         """
         Deserialize the output. This method retrieves the response from
         the miner in the form of output_text, deserializes it and returns it
         as the output of the dendrite.query() call.
 
         Returns:
-        >>> list: The deserialized response, which in this case is the value of [hf_link, key].
+        >>> str: The deserialized response, which in this case is the value of hf_link.
         """
         
-        return self.hf_link, self.key
+        return self.hf_link
